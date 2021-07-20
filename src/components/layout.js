@@ -14,7 +14,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
   const { width } = useWindowSize();
   //   const { file } = useStaticQuery(graphql`
   //     query {
