@@ -25,7 +25,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // `;
 const IndexPage = () => {
   return (
-    <Layout pageTitle={"Index Page"}>
+    <Layout>
       <h1> Hello! This is the index page. </h1>
       <Link to="/about"> About page </Link>
       <section className={icons}>
