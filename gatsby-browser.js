@@ -1,0 +1,1 @@
+import "@fontsource/playfair-display";

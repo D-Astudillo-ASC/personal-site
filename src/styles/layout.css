@@ -1,0 +1,42 @@
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+body {
+  font-family: "Playfair Display", sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.body-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.heading {
+  color: rebeccapurple;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.nav-link-item {
+  padding-right: 2rem;
+}
+.nav-link-text {
+  color: black;
+}
+
+.footer {
+  /* background-color: rgb(233, 233, 233); */
+  margin-bottom: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
