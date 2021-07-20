@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const isSSR = typeof window !== "undefined";
+const isSSR = typeof window === "undefined";
 
 export default function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
