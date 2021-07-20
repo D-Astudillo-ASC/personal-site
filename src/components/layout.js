@@ -15,7 +15,7 @@ import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 
 const Layout = ({ children }) => {
-  const { width } = useWindowSize();
+  //const { width } = useWindowSize();
   //   const { file } = useStaticQuery(graphql`
   //     query {
   //       file(relativePath: { eq: "background.jpg" }) {
@@ -30,88 +30,52 @@ const Layout = ({ children }) => {
   //   const backgroundImageData = queryData.file.childImageSharp.fluid
   //   console.log("width: " + width);
 
-  const { smallFile, medFile, largeFile, xlargeFile } = useStaticQuery(
-    graphql`
-      query getBackground {
-        smallFile: file(relativePath: { eq: "background-small.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(width: 640, quality: 100, formats: [WEBP, JPG])
-          }
-        }
-        medFile: file(relativePath: { eq: "background-med.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(width: 1920, quality: 100, formats: [WEBP, JPG])
-          }
-        }
-        largeFile: file(relativePath: { eq: "background-large.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(width: 2400, quality: 100, formats: [WEBP, JPG])
-          }
-        }
-        xlargeFile: file(relativePath: { eq: "background-xlarge.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(width: 5621, quality: 100, formats: [WEBP, JPG])
-          }
+  //   const { smallFile, medFile, largeFile, xlargeFile } = useStaticQuery(
+  //     graphql`
+  //       query getBackground {
+  //         smallFile: file(relativePath: { eq: "background-small.jpg" }) {
+  //           childImageSharp {
+  //             gatsbyImageData(width: 640, quality: 100, formats: [WEBP, JPG])
+  //           }
+  //         }
+  //         medFile: file(relativePath: { eq: "background-med.jpg" }) {
+  //           childImageSharp {
+  //             gatsbyImageData(width: 1920, quality: 100, formats: [WEBP, JPG])
+  //           }
+  //         }
+  //         largeFile: file(relativePath: { eq: "background-large.jpg" }) {
+  //           childImageSharp {
+  //             gatsbyImageData(width: 2400, quality: 100, formats: [WEBP, JPG])
+  //           }
+  //         }
+  //         xlargeFile: file(relativePath: { eq: "background-xlarge.jpg" }) {
+  //           childImageSharp {
+  //             gatsbyImageData(width: 5621, quality: 100, formats: [WEBP, JPG])
+  //           }
+  //         }
+  //       }
+  //     `
+  //   );
+
+  //   let imageFile = {};
+  //   if (width > 2400) {
+  //     imageFile = xlargeFile;
+  //   } else if (width > 1920 && width <= 2400) {
+  //     imageFile = largeFile;
+  //   } else if (width > 640 && width <= 1920) {
+  //     imageFile = medFile;
+  //   } else {
+  //     imageFile = smallFile;
+  //   }
+  const { imageFile } = useStaticQuery(graphql`
+    query {
+      imageFile: file(relativePath: { eq: "background-med.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 1920, quality: 100, formats: [WEBP, JPG])
         }
       }
-    `
-  );
-
-  let imageFile = {};
-  if (width > 2400) {
-    imageFile = xlargeFile;
-  } else if (width > 1920 && width <= 2400) {
-    imageFile = largeFile;
-  } else if (width > 640 && width <= 1920) {
-    imageFile = medFile;
-  } else {
-    imageFile = smallFile;
-  }
-
-  //   console.log(
-  //     useStaticQuery(
-  //       graphql`
-  //         query getBackground {
-  //           smallFile: file(relativePath: { eq: "background-small.jpg" }) {
-  //             childImageSharp {
-  //               gatsbyImageData(width: 640, quality: 100, formats: [WEBP, JPG])
-  //             }
-  //           }
-  //           medFile: file(relativePath: { eq: "background-med.jpg" }) {
-  //             childImageSharp {
-  //               gatsbyImageData(width: 1920, quality: 100, formats: [WEBP, JPG])
-  //             }
-  //           }
-  //           largeFile: file(relativePath: { eq: "background-large.jpg" }) {
-  //             childImageSharp {
-  //               gatsbyImageData(width: 2400, quality: 100, formats: [WEBP, JPG])
-  //             }
-  //           }
-  //           xlargeFile: file(relativePath: { eq: "background-xlarge.jpg" }) {
-  //             childImageSharp {
-  //               gatsbyImageData(width: 5621, quality: 100, formats: [WEBP, JPG])
-  //             }
-  //           }
-  //         }
-  //       `
-  //     )
-  //   );
-  //   console.log(
-  //     useStaticQuery(
-  //       graphql`
-  //         query getBackground($fileName: String, $fileWidth: Int) {
-  //           file(relativePath: { eq: $fileName }) {
-  //             childImageSharp {
-  //               fluid(maxWidth: $fileWidth, quality: 100) {
-  //                 ...GatsbyImageSharpFluid_withWebp
-  //               }
-  //             }
-  //           }
-  //         }
-  //       `,
-  //       { fileName: backgroundName, fileWidth: maxWidth }
-  //     )
-  //   );
+    }
+  `);
 
   const pluginImage = getImage(imageFile);
   //   console.log({ fileName: backgroundName, fileWidth: maxWidth });
