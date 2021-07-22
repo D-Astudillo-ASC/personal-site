@@ -3077,8 +3077,8 @@ var plugins = [{
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-manifest/gatsby-ssr */ "./node_modules/gatsby-plugin-manifest/gatsby-ssr.js"),
   options: {
     "plugins": [],
-    "name": "DanielDev",
-    "short_name": "DanDev",
+    "name": "DanielAst",
+    "short_name": "DanAst",
     "description": "Daniel Astudillo's Personal Site",
     "start_url": "/",
     "background_color": "#6b37bf",
