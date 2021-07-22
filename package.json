@@ -29,6 +29,7 @@
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-tsparticles": "^1.32.0",
     "tsparticles": "^1.32.0"

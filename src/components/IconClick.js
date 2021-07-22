@@ -1,8 +1,8 @@
 import React from "react";
 
-const IconClick = ({ icon, link }) => {
+const IconClick = ({ icon, link, style }) => {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
+    <a style={style} href={link} target="_blank" rel="noopener noreferrer">
       {icon}
     </a>
   );

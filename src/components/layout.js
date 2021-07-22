@@ -8,6 +8,7 @@ import {
   navLinkItem,
   navLinkText,
 } from "../styles/layout.module.css";
+import NavBar from "./NavBar";
 import params from "../configs/particles";
 import Footer from "./Footer";
 import useWindowSize from "../utils/useWindowSize";
@@ -85,6 +86,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className={bodyContainer}>
+        <NavBar />
         {children}
         <Footer />
       </div>

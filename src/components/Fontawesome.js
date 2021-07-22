@@ -6,9 +6,15 @@ import {
   faHackerrank,
   faKaggle,
   faLinkedin,
+  faFreeCodeCamp,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faMoon, faSun, faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import {
+  faMoon,
+  faSun,
+  faEnvelope,
+  faFileCode,
+} from "@fortawesome/free-regular-svg-icons";
 
 library.add(
   faFacebook,
@@ -18,5 +24,7 @@ library.add(
   faKaggle,
   faMoon,
   faSun,
-  faEnvelope
+  faEnvelope,
+  faFreeCodeCamp,
+  faFileCode
 );
