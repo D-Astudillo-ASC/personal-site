@@ -1,0 +1,11 @@
+.icon-section {
+  /* position: absolute; */
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}

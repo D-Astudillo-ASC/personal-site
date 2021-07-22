@@ -1,0 +1,57 @@
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: burlywood;
+}
+body {
+  font-family: "Playfair Display", sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #722620;
+}
+
+.body-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+#particles canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* .particles-bg .tsparticles {
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 0;
+} */
+/* .particles-bg .tsparticles canvas {
+  transition: 0.2s all ease-in-out;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+} */
+.heading {
+  color: rebeccapurple;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.nav-link-item {
+  padding-right: 2rem;
+}
+.nav-link-text {
+  color: black;
+}

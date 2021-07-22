@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "DanielDev",
-        short_name: "DanDev",
+        name: "DanielAst",
+        short_name: "DanAst",
         description: "Daniel Astudillo's Personal Site",
         start_url: "/",
         background_color: "#6b37bf",

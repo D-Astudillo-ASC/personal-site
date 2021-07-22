@@ -1,4 +1,5 @@
 import React from "react";
+import Particles from "react-tsparticles";
 import {
   //   container,
   heading,
@@ -6,15 +7,18 @@ import {
   navLinks,
   navLinkItem,
   navLinkText,
-} from "../styles/layout.css";
-
+} from "../styles/layout.module.css";
+import params from "../configs/particles";
 import Footer from "./Footer";
 import useWindowSize from "../utils/useWindowSize";
-import { useStaticQuery, graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import { BgImage } from "gbimage-bridge";
+// import { useStaticQuery, graphql } from "gatsby";
+// import { getImage } from "gatsby-plugin-image";
+// import { BgImage } from "gbimage-bridge";
 
 const Layout = ({ children }) => {
+  const { width, height } = useWindowSize();
+  console.log(width);
+  console.log(height);
   //const { width } = useWindowSize();
   //   const { file } = useStaticQuery(graphql`
   //     query {
@@ -67,52 +71,39 @@ const Layout = ({ children }) => {
   //   } else {
   //     imageFile = smallFile;
   //   }
-  const { imageFile } = useStaticQuery(graphql`
-    query {
-      imageFile: file(relativePath: { eq: "background-med.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(width: 1920, quality: 100, formats: [WEBP, JPG])
-        }
-      }
-    }
-  `);
+  //   const { imageFile } = useStaticQuery(graphql`
+  //     query {
+  //       imageFile: file(relativePath: { eq: "background-med.jpg" }) {
+  //         childImageSharp {
+  //           gatsbyImageData(width: 1920, quality: 100, formats: [WEBP, JPG])
+  //         }
+  //       }
+  //     }
+  //   `);
 
-  const pluginImage = getImage(imageFile);
+  //   const pluginImage = getImage(imageFile);
   //   console.log({ fileName: backgroundName, fileWidth: maxWidth });
   //   console.log(pluginImage);
   return (
-    <div className={bodyContainer}>
-      <BgImage
-        image={pluginImage}
-        style={{
-          position: "inherit",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
-          backgroundColor: "#464646",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        {/* <nav>
-          <ul className={navLinks}>
-            <li className={navLinkItem}>
-              <Link to="/" className={navLinkText}>
-                Home
-              </Link>
-            </li>
-            <li className={navLinkItem}>
-              <Link to="/about" className={navLinkText}>
-                About
-              </Link>
-            </li>
-          </ul>
-        </nav> */}
+    <>
+      <div className={bodyContainer}>
         {children}
         <Footer />
-      </BgImage>
-    </div>
+      </div>
+      <Particles
+        width={width}
+        height={height}
+        options={params}
+        style={{
+          position: "fixed",
+          height: "100%",
+          width: "100%",
+          left: 0,
+          top: 0,
+          zIndex: -1,
+        }}
+      />
+    </>
   );
 };
 export default Layout;

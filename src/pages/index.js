@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
 import "../components/Fontawesome";
-import { icons } from "../styles/index.css";
+import * as style from "../styles/index.module.css";
 import IconClick from "../components/IconClick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -28,13 +28,13 @@ const IndexPage = () => {
     <Layout>
       <h1> Hello! This is the index page. </h1>
       <Link to="/about"> About page </Link>
-      <section className={icons}>
+      <section className={style.iconSection}>
         <IconClick
           icon={
             <FontAwesomeIcon
               icon={["fab", "github"]}
               size="4x"
-              color="#000BBB"
+              color="#722620"
               title="Github"
             />
           }
@@ -45,7 +45,7 @@ const IndexPage = () => {
             <FontAwesomeIcon
               icon={["fab", "facebook"]}
               size="4x"
-              color="#000BBB"
+              color="#722620"
               title="Facebook"
             />
           }
@@ -56,7 +56,7 @@ const IndexPage = () => {
             <FontAwesomeIcon
               icon={["fab", "kaggle"]}
               size="4x"
-              color="#000BBB"
+              color="#722620"
               title="Kaggle"
             />
           }
@@ -67,7 +67,7 @@ const IndexPage = () => {
             <FontAwesomeIcon
               icon={["fab", "linkedin"]}
               size="4x"
-              color="#000BBB"
+              color="#722620"
               title="LinkedIn"
             />
           }
@@ -78,7 +78,7 @@ const IndexPage = () => {
             <FontAwesomeIcon
               icon={["fab", "hackerrank"]}
               size="4x"
-              color="#000BBB"
+              color="#722620"
               title="Hackerrank"
             />
           }
@@ -89,7 +89,7 @@ const IndexPage = () => {
             <FontAwesomeIcon
               icon={["far", "envelope"]}
               size="4x"
-              color="#000BBB"
+              color="#722620"
               title="E-Mail"
             />
           }
