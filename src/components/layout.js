@@ -17,8 +17,6 @@ import useWindowSize from "../utils/useWindowSize";
 
 const Layout = ({ children }) => {
   const { width, height } = useWindowSize();
-  console.log(width);
-  console.log(height);
   //const { width } = useWindowSize();
   //   const { file } = useStaticQuery(graphql`
   //     query {
