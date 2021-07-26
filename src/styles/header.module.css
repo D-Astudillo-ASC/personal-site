@@ -1,0 +1,153 @@
+.navBar-custom {
+  background-color: #722620;
+  height: 74px;
+  overflow: hidden;
+  opacity: 0.6;
+  box-shadow: 5px 5px 25px 0px rgb(0 0 0 / 10%);
+}
+
+.navBar-link {
+  font-weight: bold;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 74px;
+  text-decoration: none;
+  color: burlywood;
+}
+
+/* .navBar-custom > .navBar-link:hover {
+  background-color: burlywood;
+  color: #722620;
+  opacity: 1;
+  transition: 0.5s;
+} */
+
+.nav-container {
+  height: 74px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-element {
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: flex-end;
+  justify-content: flex-end; */
+}
+
+.navBar-logo {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBar-links {
+  font-size: 20px;
+}
+
+.navBar-text {
+  padding-top: 20px;
+}
+
+/* styled components crap below.....  */
+
+.navBar-menu {
+  display: none;
+  height: 100%;
+  align-items: flex-end;
+  /* padding: 0 10vw; */
+}
+
+.navBar-menu-bar {
+  background-color: #111;
+  width: 30px;
+  height: 3px;
+  margin-bottom: 6px;
+  transition: all 0.3s linear;
+  /* align-self: center;
+  position: relative; */
+  /* transform: rotate(-45deg); */
+}
+/* .navBar-menu::before,
+.navBar-menu::after {
+  width: 30px;
+  height: 3px;
+  background-color: #111;
+  content: "";
+  position: absolute;
+  transition: all 0.3s linear;
+} */
+
+@media only screen and (max-width: 768px) {
+  .navBar-links {
+    display: none;
+  }
+
+  .navBar-menu {
+    display: flex;
+    height: 100%;
+    cursor: pointer;
+    /* padding: 0 10vw; */
+    flex-direction: column;
+    /* align-items: flex-end; */
+    justify-content: center;
+  }
+  /* .navBar- */
+}
+/* .navBar-is-open {
+  background-color: #111;
+  width: 30px;
+  height: 3px;
+  transition: all 0.3s linear;
+  align-self: center;
+  position: relative;
+  transform: rotate(-45deg);
+}
+.navBar-is-open::before,
+.navBar-is-open::after {
+  width: 30px;
+  height: 3px;
+  background-color: #111;
+  content: "";
+  position: absolute;
+  transition: all 0.3s linear;
+}
+.navBar-is-open::before {
+  transform: rotate(-90deg) translate(-10px, 0px);
+  top: -10px;
+}
+.navBar-is-open::after {
+  opacity: 0;
+  transform: rotate(90deg);
+  top: 10px;
+} */
+/* 
+.navBar-closed {
+  background-color: #111;
+  width: 30px;
+  height: 3px;
+  transition: all 0.3s linear;
+  align-self: center;
+  position: relative;
+  transform: inherit;
+} */
+/* .navBar-closed::before,
+.navBar-closed::after {
+  width: 30px;
+  height: 3px;
+  background-color: #111;
+  content: "";
+  position: absolute;
+  transition: all 0.3s linear;
+}
+.navBar-closed::before {
+  transform: rotate(0deg);
+  top: -10px;
+}
+.navBar-closed::after {
+  opacity: 1;
+  transform: rotate(0deg);
+  top: 10px;
+} */

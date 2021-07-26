@@ -3,6 +3,10 @@ var plugins = [{
       plugin: require('/Users/danielastudillo/Desktop/Projects/personal-site/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"DanielAst","short_name":"DanAst","description":"Daniel Astudillo's Personal Site","start_url":"/","background_color":"#6b37bf","theme_color":"#6b37bf","display":"standalone","icon":"src/images/icon.png","crossOrigin":"use-credentials","legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","include_favicon":true,"cacheDigest":"b861aa7ce402aa505677dcd433631016"},
     },{
+      name: 'gatsby-plugin-react-helmet',
+      plugin: require('/Users/danielastudillo/Desktop/Projects/personal-site/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       name: 'gatsby-plugin-offline',
       plugin: require('/Users/danielastudillo/Desktop/Projects/personal-site/node_modules/gatsby-plugin-offline/gatsby-ssr'),
       options: {"plugins":[]},

@@ -1,8 +1,14 @@
 .footer {
-  /* background-color: rgb(233, 233, 233); */
   margin-bottom: 10px;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+@media only screen and (max-width: 347px) {
+  .footer {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
 }

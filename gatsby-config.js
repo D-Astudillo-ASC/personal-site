@@ -1,9 +1,24 @@
 const path = require("path");
 module.exports = {
   siteMetadata: {
-    title: "Daniel Astudillo's Personal Site",
+    title: "Daniel Astudillo",
     author: "Daniel Astudillo",
     description: "Daniel Astudillo's Personal Site",
+    keywords: [
+      "Daniel",
+      "Astudillo",
+      "Personal",
+      "Site",
+      "Blog",
+      "Resume",
+      "Projects",
+      "Work",
+    ],
+    siteUrl:
+      process.env.NODE_ENV === "production"
+        ? "https://danielast.gatsbyjs.io/"
+        : "http://localhost:8000",
+    unemployed: true,
     menuLinks: [
       {
         name: "home",
@@ -42,6 +57,7 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",

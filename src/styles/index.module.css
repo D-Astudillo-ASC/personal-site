@@ -1,5 +1,4 @@
 .icon-section {
-  /* position: absolute; */
   justify-content: center;
   position: fixed;
   bottom: 0;
@@ -8,4 +7,40 @@
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+}
+
+.svg-leet-code {
+  position: absolute;
+  fill: #722620;
+  top: 40%;
+  margin-left: 30px;
+  width: 64px;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 627px) and (min-width: 438px) {
+  .svg-leet-code {
+    width: 48px;
+    margin-left: 25px;
+  }
+}
+
+@media only screen and (max-width: 437px) and (min-width: 331px) {
+  .svg-leet-code {
+    width: 32px;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .svg-leet-code {
+    width: 16px;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 627px) {
+  .icon-section {
+    gap: 10px;
+  }
 }
