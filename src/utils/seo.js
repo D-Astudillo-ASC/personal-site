@@ -12,7 +12,7 @@ const SeoComponent = ({
   pathname,
 }) => {
   const query = graphql`
-    query SEO {
+    {
       site {
         siteMetadata {
           title
@@ -24,24 +24,26 @@ const SeoComponent = ({
       }
     }
   `;
-  const { siteMetadata } = useStaticQuery(query).site;
-  const metaDescription = description || siteMetadata.description;
-  const image = img && img.src ? `${siteMetadata.siteUrl}${img.src}` : null;
-  const canonical = pathname ? `${siteMetadata.siteUrl}${pathname}` : null;
+  const data = useStaticQuery(query);
+  const { site } = data;
+  const metaDescription = description || site.siteMetadata.description;
+  const image =
+    img && img.src ? `${site.siteMetadata.siteUrl}${img.src}` : null;
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
-      titleTemplate={`%s | ${siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
       link={canonical ? [{ rel: `canonical`, href: canonical }] : []}
       meta={[
         { name: `description`, content: metaDescription },
-        { name: `keywords`, content: siteMetadata.keywords.join(`,`) },
+        { name: `keywords`, content: site.siteMetadata.keywords.join(`,`) },
         { property: `og:title`, content: title },
         { property: `og:description`, content: metaDescription },
         { property: `og:type`, content: `website` },
-        { name: `twitter:creator`, content: siteMetadata.author },
+        { name: `twitter:creator`, content: site.siteMetadata.author },
         { name: `twitter:title`, content: `title` },
         { name: `twitter:description`, content: metaDescription },
       ]
