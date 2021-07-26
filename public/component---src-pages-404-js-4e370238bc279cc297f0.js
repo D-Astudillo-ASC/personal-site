@@ -1,0 +1,2 @@
+(self.webpackChunkpersonal_site=self.webpackChunkpersonal_site||[]).push([[883],{9616:function(e,t,n){"use strict";n.r(t);var l=n(5007),r=n(4969);t.default=function(){return l.default.createElement(r.Z,null,l.default.createElement("h1",null,"404 Error: Page Not Found"),l.default.createElement("p",null,"Oops! The page you were looking for has been removed or does not exist."))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-4e370238bc279cc297f0.js.map

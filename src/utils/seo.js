@@ -11,6 +11,19 @@ const SeoComponent = ({
   title,
   pathname,
 }) => {
+  const query = graphql`
+    query SEO {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          keywords
+          siteUrl
+        }
+      }
+    }
+  `;
   const { siteMetadata } = useStaticQuery(query).site;
   const metaDescription = description || siteMetadata.description;
   const image = img && img.src ? `${siteMetadata.siteUrl}${img.src}` : null;
@@ -67,17 +80,3 @@ SeoComponent.defaultProps = {
   meta: [],
   description: ``,
 };
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        keywords
-        siteUrl
-      }
-    }
-  }
-`;
