@@ -26,19 +26,3 @@ body {
   height: 100%;
   z-index: -1;
 }
-
-/* .particles-bg .tsparticles {
-  overflow: hidden;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  z-index: 0;
-} */
-/* .particles-bg .tsparticles canvas {
-  transition: 0.2s all ease-in-out;
-  z-index: 0;
-  height: 100%;
-  width: 100%;
-} */

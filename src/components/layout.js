@@ -10,11 +10,9 @@ const Layout = ({ children }) => {
   const { width, height } = useWindowSize();
   return (
     <>
-      <div className={bodyContainer}>
-        <Header />
-        {children}
-        <Footer />
-      </div>
+      <Header />
+      <div className={bodyContainer}>{children}</div>
+      <Footer />
       <Particles
         width={width}
         height={height}
