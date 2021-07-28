@@ -1,6 +1,5 @@
 import React from "react";
 //import Loadable from "@loadable/component";
-import { Link } from "gatsby";
 import SeoComponent from "../utils/seo";
 import useWindowSize from "../utils/useWindowSize";
 import Layout from "../components/layout";
@@ -32,8 +31,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <SeoComponent title="Home" />
-      <h1> Hello! This is the index page. </h1>
-      <Link to="/about"> About page </Link>
+      <div className={style.greetingsContainer}>
+        {/* <h1 className={style.greetingsBody}> */}
+        <h1>Hello! My name is Daniel Astudillo, welcome to my site!</h1>
+      </div>
       <section className={style.iconSection}>
         <IconClick
           icon={

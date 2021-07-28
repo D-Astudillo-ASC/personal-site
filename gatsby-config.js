@@ -28,6 +28,18 @@ module.exports = {
         name: "about",
         link: "/about",
       },
+      {
+        name: "projects",
+        link: "/projects",
+      },
+      {
+        name: "blog",
+        link: "/blog",
+      },
+      {
+        name: "resume",
+        link: "/resume",
+      },
     ],
   },
   plugins: [
