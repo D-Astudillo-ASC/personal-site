@@ -1,5 +1,4 @@
-import React from "react";
-//import Loadable from "@loadable/component";
+import React, { useEffect, useState, useRef } from "react";
 import SeoComponent from "../utils/seo";
 import useWindowSize from "../utils/useWindowSize";
 import Layout from "../components/layout";
@@ -7,10 +6,29 @@ import "../components/Fontawesome";
 import * as style from "../styles/index.module.css";
 import IconClick from "../components/IconClick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// This is flickering, will probably need to look into this plugin: https://github.com/graysonhicks/gatsby-plugin-loadable-components-ssr
-//const IconClick = Loadable(() => import("../components/IconClick"), {
-//   fallback: <div>Loading...</div>,
-// });
+
+//Was trying to implement the typewriter effect, but ended up creating another way to display text in a loop :)
+const DisplayText = ({ textArray }) => {
+  const [curText, setText] = useState("");
+  const curIdx = useRef(0);
+
+  useEffect(() => {
+    const changeLine = () => {
+      setText(textArray[curIdx.current]);
+      curIdx.current++;
+    };
+
+    if (curIdx.current > textArray.length) {
+      curIdx.current = 0;
+    }
+
+    let addText = setInterval(changeLine, 2000);
+    return () => clearInterval(addText);
+  });
+
+  return <h1 className={style.displayText}>{curText}</h1>;
+};
+
 const IndexPage = () => {
   const { width } = useWindowSize();
   let iconSize = "";
@@ -32,8 +50,18 @@ const IndexPage = () => {
     <Layout>
       <SeoComponent title="Home" />
       <div className={style.greetingsContainer}>
-        {/* <h1 className={style.greetingsBody}> */}
-        <h1>Hello! My name is Daniel Astudillo, welcome to my site!</h1>
+        <DisplayText
+          textArray={[
+            "Hello! My name is Daniel Astudillo, welcome to my personal website!",
+            "I'm currently a 4th-year student at Williams College. Go Ephs!",
+            "I'm pursuing a double major in Computer Science and Math.",
+            "My preferred programming languages are Java, Python, and sometimes JS.",
+            "This website is my first project powered by Gatsby! It was challenging, but I did it well!",
+            "Spotify is the only subscription worth getting.",
+            "100% Ecuatoriano.",
+            "Hala Madrid!",
+          ]}
+        />
       </div>
       <section className={style.iconSection}>
         <IconClick

@@ -9,7 +9,6 @@ exports.components = {
   "component---src-pages-about-js": preferDefault(require("/Users/danielastudillo/Desktop/Projects/personal-site/src/pages/about.js")),
   "component---src-pages-blog-js": preferDefault(require("/Users/danielastudillo/Desktop/Projects/personal-site/src/pages/blog.js")),
   "component---src-pages-index-js": preferDefault(require("/Users/danielastudillo/Desktop/Projects/personal-site/src/pages/index.js")),
-  "component---src-pages-projects-js": preferDefault(require("/Users/danielastudillo/Desktop/Projects/personal-site/src/pages/projects.js")),
-  "component---src-pages-resume-js": preferDefault(require("/Users/danielastudillo/Desktop/Projects/personal-site/src/pages/resume.js"))
+  "component---src-pages-projects-js": preferDefault(require("/Users/danielastudillo/Desktop/Projects/personal-site/src/pages/projects.js"))
 }
 

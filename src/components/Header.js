@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
+// import resume from "../../static/Resume.pdf";
 import { Navbar, Nav } from "react-bootstrap";
 import "../components/Fontawesome";
 import {
@@ -20,16 +21,14 @@ import {
 } from "../styles/header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useWindowSize from "../utils/useWindowSize";
-// const MenuDisplay = () =>{
-//   return (
-//     <div className={navBarMenu}></div>
-//   )
-// }
-
-// const Toggle = () => {
-//   return <div className={navBarToggle}></div>;
-// };
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    {
+      file(name: { eq: "Resume" }) {
+        publicURL
+      }
+    }
+  `);
   const [navBarOpen, setNavBarOpen] = useState(false);
   const { width } = useWindowSize();
   return (
@@ -67,9 +66,14 @@ const Header = () => {
               <Nav.Link as={Link} to="/projects" className={navBarLink}>
                 <div className={navBarText}>Projects</div>
               </Nav.Link>
-              <Nav.Link as={Link} to="/resume" className={navBarLink}>
+              <a
+                href={data.file.publicURL}
+                className={navBarLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className={navBarText}>Resume</div>
-              </Nav.Link>
+              </a>
               <Nav.Link as={Link} to="/blog" className={navBarLink}>
                 <div className={navBarText}>Blog</div>
               </Nav.Link>
@@ -87,9 +91,14 @@ const Header = () => {
           <Nav.Link as={Link} to="/projects" className={navBarLink}>
             <div className={navBarText}>Projects</div>
           </Nav.Link>
-          <Nav.Link as={Link} to="/resume" className={navBarLink}>
+          <a
+            href={data.file.publicURL}
+            className={navBarLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className={navBarText}>Resume</div>
-          </Nav.Link>
+          </a>
           <Nav.Link as={Link} to="/blog" className={navBarLink}>
             <div className={navBarText}>Blog</div>
           </Nav.Link>

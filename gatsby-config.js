@@ -38,7 +38,7 @@ module.exports = {
       },
       {
         name: "resume",
-        link: "/resume",
+        link: "/resume.pdf",
       },
     ],
   },
@@ -48,6 +48,13 @@ module.exports = {
       options: {
         name: `images`,
         path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
       },
     },
     {

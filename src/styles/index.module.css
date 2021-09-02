@@ -21,34 +21,12 @@
 }
 
 .greetings-container h1 {
-  /* white-space: nowrap;
-  margin: 0 auto;
-  border-right: 0.15em solid orange;
-  letter-spacing: 0.15em;
-  position: absolute; */
   text-align: center;
-  /* text-align: center;
-  -webkit-animation: typing 3.5s steps(40, end),
-    blink-caret 0.75s step-end infinite;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; */
 }
-/* @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+
+.display-text {
+  font-size: 32px;
 }
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
-} */
 .svg-leet-code {
   position: absolute;
   fill: #722620;
