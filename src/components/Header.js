@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
-import "./fontawesome.js";
 import {
   navBarCustom,
   navBarLink,
