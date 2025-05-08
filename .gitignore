@@ -60,6 +60,7 @@ public
 
 # Ignore pdf and scaffolding files.
 *-scaffold.*
+.scaffolding/
 *.pdf
 
 # Mac files
