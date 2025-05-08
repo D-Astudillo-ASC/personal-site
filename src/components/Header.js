@@ -20,6 +20,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useWindowSize from "../utils/useWindowSize";
 const Header = () => {
+  
   const data = useStaticQuery(graphql`
     {
       allFile {
