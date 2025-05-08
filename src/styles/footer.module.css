@@ -6,9 +6,58 @@
   width: 100%;
 }
 
+.icon-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 50px;
+  gap: 20px;
+  width: 100%;
+}
+
 @media only screen and (max-width: 347px) {
   .footer {
     font-size: 10px;
     margin-bottom: 20px;
   }
 }
+
+.svg-leet-code {
+  fill: #722620;
+  top: 40%;
+  width: 64px;
+}
+
+@media only screen and (max-width: 627px) and (min-width: 438px) {
+  .svg-leet-code {
+    width: 48px;
+    flex-basis: 100%;
+    margin-top: 12px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 437px) and (min-width: 331px) {
+  .svg-leet-code {
+    width: 32px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .svg-leet-code {
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 627px) {
+  .icon-section {
+    gap: 10px;
+  }
+}
+

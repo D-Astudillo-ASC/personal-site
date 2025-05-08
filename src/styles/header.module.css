@@ -43,7 +43,9 @@
 }
 
 .navBar-menu {
+  background-color: #722620;
   display: none;
+  border: none;
   height: 100%;
   align-items: flex-end;
 }
