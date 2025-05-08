@@ -23,9 +23,19 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return (
+    const [ParticlesBackground, setParticlesBackground] = React.useState(null);
+
+    React.useEffect(() => {
+        if (typeof window !== "undefined") {
+            import("./particles/ParticlesBackground").then((mod) => {
+                setParticlesBackground(() => mod.default);
+            });
+        }
+    }, []);
+
+    return (
     <>
-      <ParticlesBackground />
+      {ParticlesBackground && <ParticlesBackground />}
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
