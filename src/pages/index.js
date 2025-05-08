@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Seo from "../components/Seo";
-import "../components/FontAwesome.js";
+import "../components/fontawesome.js";
 import * as style from "../styles/index.module.css";
 
 const DisplayText = ({ textArray }) => {
