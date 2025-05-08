@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Seo from "../components/Seo";
 import useWindowSize from "../utils/useWindowSize";
-import "../components/FontAwesome";
+import "../components/FontAwesome.js";
 import * as style from "../styles/index.module.css";
 import IconClick from "../components/IconClick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
