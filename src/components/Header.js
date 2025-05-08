@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
@@ -22,7 +22,16 @@ import useWindowSize from "../utils/useWindowSize";
 const Header = () => {
   const data = useStaticQuery(graphql`
     {
-      allFile(filter: {relativePath: {eq: "resume.pdf"}, sourceInstanceName: {eq: "data"}}) {
+      allFile {
+        edges {
+          node {
+            relativePath
+            sourceInstanceName
+            publicURL
+          }
+        }
+      }
+      resumeFile: allFile(filter: {relativePath: {eq: "resume.pdf"}, sourceInstanceName: {eq: "data"}}) {
         edges {
           node {
             publicURL
@@ -33,7 +42,13 @@ const Header = () => {
   `);
   const [navBarOpen, setNavBarOpen] = useState(false);
   const { width } = useWindowSize();
-  const resumeUrl = data?.allFile?.edges[0]?.node?.publicURL || "#";
+  
+  useEffect(() => {
+    console.log('All files:', data.allFile.edges);
+    console.log('Resume file:', data.resumeFile.edges[0]?.node);
+  }, [data]);
+  
+  const resumeUrl = data?.resumeFile?.edges[0]?.node?.publicURL || "#";
   
   return (
     <>
