@@ -1,4 +1,12 @@
-const path = require("path");
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
+ */
+
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   siteMetadata: {
     title: "Daniel Astudillo",
@@ -43,11 +51,12 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -57,6 +66,8 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -76,12 +87,5 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-offline",
-    "gatsby-plugin-gatsby-cloud",
-    "gatsby-plugin-image",
-    "gatsby-plugin-preact",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
   ],
-};
+}

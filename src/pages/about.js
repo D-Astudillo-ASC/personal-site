@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
-import SeoComponent from "../utils/seo";
-import Layout from "../components/layout";
+import Seo from "../components/Seo";
 const AboutPage = () => {
   return (
-    <Layout>
-      <SeoComponent title="About Me " />
-      <h1> About me section. Just trying to get this up and running. </h1>
+    <>
+      <Seo title="About Me" />
+      <h1> About me section. More about me in Personal Website v2. </h1>
       <Link to="/"> Back home </Link>
-    </Layout>
+    </>
   );
 };
 

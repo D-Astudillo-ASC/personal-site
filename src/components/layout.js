@@ -1,32 +1,45 @@
-import React from "react";
-import Particles from "react-tsparticles";
-import { bodyContainer } from "../styles/layout.module.css";
-import Header from "./Header";
-import params from "../configs/particles";
-import Footer from "./Footer";
-import useWindowSize from "../utils/useWindowSize";
+/**
+ * Layout component that queries for data
+ * with Gatsby's useStaticQuery component
+ *
+ * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
+ */
+
+import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Header from "./Header"
+import "../styles/Layout.css"
+import Footer from "./Footer"
+import ParticlesBackground from "./particles/ParticlesBackground"
+
 
 const Layout = ({ children }) => {
-  const { width, height } = useWindowSize();
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <>
-      <Header />
-      <div className={bodyContainer}>{children}</div>
-      <Footer />
-      <Particles
-        width={width}
-        height={height}
-        options={params}
+      <ParticlesBackground />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <div
         style={{
-          position: "fixed",
-          height: "100%",
-          width: "100%",
-          left: 0,
-          top: 0,
-          zIndex: -1,
+          margin: `0 auto`,
+          maxWidth: `var(--size-content)`,
+          padding: `var(--size-gutter)`,
         }}
-      />
+      >
+        <main>{children}</main>x
+      </div>
+      <Footer />
     </>
-  );
-};
-export default Layout;
+  )
+}
+
+export default Layout

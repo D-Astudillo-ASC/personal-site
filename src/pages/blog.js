@@ -1,12 +1,13 @@
 import React from "react";
-import SeoComponent from "../utils/seo";
-import Layout from "../components/layout";
+import { Link } from "gatsby";
+import Seo from "../components/Seo";
 const BlogPage = () => {
   return (
-    <Layout>
-      <SeoComponent title="Blog " />
-      <h1> Blog is currently under construction. </h1>
-    </Layout>
+    <>
+      <Seo title="Blog" />
+      <h1> Blog Page. Will be fully implemented in Personal Website v2. </h1>
+      <Link to="/"> Back home </Link>
+    </>
   );
 };
 

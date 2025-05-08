@@ -1,2 +1,0 @@
-(self.webpackChunkpersonal_site=self.webpackChunkpersonal_site||[]).push([[682],{5518:function(e,t,n){"use strict";n.r(t);var u=n(5007),l=n(5444),a=n(1269);t.default=function(){return u.default.createElement(a.Z,null,u.default.createElement("h1",null," About me section. Just trying to get this up and running. "),u.default.createElement(l.Link,{to:"/"}," Back home "))}}}]);
-//# sourceMappingURL=component---src-pages-about-js-39c01f498cca826f3db5.js.map

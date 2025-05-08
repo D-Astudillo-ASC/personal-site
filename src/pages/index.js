@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
-import SeoComponent from "../utils/seo";
+import Seo from "../components/Seo";
 import useWindowSize from "../utils/useWindowSize";
-import Layout from "../components/layout";
-import "../components/Fontawesome";
+import "../components/FontAwesome";
 import * as style from "../styles/index.module.css";
 import IconClick from "../components/IconClick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-//Was trying to implement the typewriter effect, but ended up creating another way to display text in a loop :)
 const DisplayText = ({ textArray }) => {
   const [curText, setText] = useState("");
   const curIdx = useRef(0);
@@ -46,9 +44,11 @@ const IndexPage = () => {
     iconSize = "1x";
     svgWidth = 16;
   }
+
   return (
-    <Layout>
-      <SeoComponent title="Home" />
+    <>
+      {/* TODO: Move Seo component into gatsby-browser.js to avoid repetition.*/}
+      <Seo title="Home" />
       <div className={style.greetingsContainer}>
         <DisplayText
           textArray={[
@@ -139,7 +139,7 @@ const IndexPage = () => {
               title="E-Mail"
             />
           }
-          link="mailto:daniel.ast2016@gmail.com"
+          link="mailto:daniel.ast9015@gmail.com"
         />
         <IconClick
           icon={
@@ -158,7 +158,7 @@ const IndexPage = () => {
           link="https://leetcode.com/dtm99/"
         />
       </section>
-    </Layout>
+    </>
   );
 };
 

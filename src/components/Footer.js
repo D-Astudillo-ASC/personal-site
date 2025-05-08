@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <div className={style.footer}>
       <span>
-        <b>{author}</b> &copy; {new Date().getFullYear()}. Made with&nbsp;
+        <b>{author}</b> &copy; {2021}. Made with&nbsp;
         <span>&nbsp;❤&nbsp;</span> &&nbsp;
         <a href="https://www.gatsbyjs.org/">Gatsby</a>
       </span>

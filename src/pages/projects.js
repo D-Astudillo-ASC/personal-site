@@ -1,14 +1,14 @@
 import React from "react";
-import SeoComponent from "../utils/seo";
-import Layout from "../components/layout";
+import Seo from "../components/Seo";
 const ProjectsPage = () => {
   return (
-    <Layout>
-      <SeoComponent title="Projects " />
+    <>
+      <Seo title="Projects " />
       <div>
-        <h1> Projects page under construction. </h1>
+        {/* TODO: Add link to Personal Website v2 */}
+        <h1> Projects page displayed in v2. </h1>
       </div>
-    </Layout>
+    </>
   );
 };
 

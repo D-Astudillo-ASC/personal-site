@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
 import { Link, useStaticQuery, graphql } from "gatsby";
-// import resume from "../../static/Resume.pdf";
 import { Navbar, Nav } from "react-bootstrap";
-import "../components/Fontawesome";
+import "../components/FontAwesome";
 import {
   navBarCustom,
   navBarLink,
@@ -24,7 +23,7 @@ import useWindowSize from "../utils/useWindowSize";
 const Header = () => {
   const data = useStaticQuery(graphql`
     {
-      file(name: { eq: "Resume" }) {
+      file(name: { eq: "resume" }) {
         publicURL
       }
     }
@@ -45,18 +44,20 @@ const Header = () => {
               />
             </Navbar.Brand>
           </Nav>
-          <div
-            className={navBarMenu}
-            onClick={() => {
-              if (width <= 768) {
-                setNavBarOpen(!navBarOpen);
-              }
-            }}
+          <button
+              className={navBarMenu}
+              onClick={() => {
+                if (width <= 768) {
+                  setNavBarOpen(!navBarOpen);
+                }
+              }}
+              aria-label="Toggle navigation"
+              aria-expanded={navBarOpen ? "true" : "false"}
           >
             <div className={`${navBarOpen ? "open " : ""}${navBarMenuBar1}`} />
             <div className={`${navBarOpen ? "open " : ""}${navBarMenuBar2}`} />
             <div className={`${navBarOpen ? "open " : ""}${navBarMenuBar3}`} />
-          </div>
+          </button>
           <Navbar.Collapse id="responsive-navbar-nav" className={navBarLinks}>
             <Nav className={navElement}>
               <Nav.Link as={Link} to="/about" className={navBarLink}>
