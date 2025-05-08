@@ -10,7 +10,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
 import "../styles/layout.css"
 import Footer from "./Footer"
-import ParticlesBackground from "./particles/ParticlesBackground"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,19 +22,19 @@ const Layout = ({ children }) => {
     }
   `)
 
-    const [ParticlesBackground, setParticlesBackground] = React.useState(null);
+    const [ParticlesComponent, setParticlesComponent] = React.useState(null);
 
     React.useEffect(() => {
         if (typeof window !== "undefined") {
-            import("./particles/ParticlesBackground").then((mod) => {
-                setParticlesBackground(() => mod.default);
+            import("./particles/ParticlesBackground.jsx").then((mod) => {
+                setParticlesComponent(() => mod.default);
             });
         }
     }, []);
 
     return (
     <>
-      {ParticlesBackground && <ParticlesBackground />}
+      {ParticlesComponent && <ParticlesComponent />}
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
@@ -44,7 +43,7 @@ const Layout = ({ children }) => {
           padding: `var(--size-gutter)`,
         }}
       >
-        <main>{children}</main>x
+        <main>{children}</main>
       </div>
       <Footer />
     </>

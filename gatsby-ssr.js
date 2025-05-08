@@ -7,7 +7,8 @@
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
-require("./src/utils/fontawesome.js")
-exports.onRenderBody = ({ setHtmlAttributes }) => {
+import "./src/utils/fontawesome.js"
+
+export const onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }

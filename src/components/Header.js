@@ -22,13 +22,19 @@ import useWindowSize from "../utils/useWindowSize";
 const Header = () => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "resume.pdf" }) {
-        publicURL
+      allFile(filter: {relativePath: {eq: "resume.pdf"}, sourceInstanceName: {eq: "data"}}) {
+        edges {
+          node {
+            publicURL
+          }
+        }
       }
     }
   `);
   const [navBarOpen, setNavBarOpen] = useState(false);
   const { width } = useWindowSize();
+  const resumeUrl = data?.allFile?.edges[0]?.node?.publicURL || "#";
+  
   return (
     <>
       <Navbar fixed="top" className={navBarCustom} expand="lg">
@@ -67,7 +73,7 @@ const Header = () => {
                 <div className={navBarText}>Projects</div>
               </Nav.Link>
               <a
-                href={data.file.publicURL}
+                href={resumeUrl}
                 className={navBarLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -92,7 +98,7 @@ const Header = () => {
             <div className={navBarText}>Projects</div>
           </Nav.Link>
           <a
-            href={data.file.publicURL}
+            href={resumeUrl}
             className={navBarLink}
             target="_blank"
             rel="noopener noreferrer"
