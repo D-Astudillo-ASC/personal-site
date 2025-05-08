@@ -20,18 +20,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useWindowSize from "../utils/useWindowSize";
 const Header = () => {
-  
   const data = useStaticQuery(graphql`
     {
-      allFile {
-        edges {
-          node {
-            relativePath
-            sourceInstanceName
-            publicURL
-          }
-        }
-      }
       resumeFile: allFile(filter: {relativePath: {eq: "resume.pdf"}, sourceInstanceName: {eq: "data"}}) {
         edges {
           node {
@@ -43,11 +33,6 @@ const Header = () => {
   `);
   const [navBarOpen, setNavBarOpen] = useState(false);
   const { width } = useWindowSize();
-  
-  useEffect(() => {
-    console.log('All files:', data.allFile.edges);
-    console.log('Resume file:', data.resumeFile.edges[0]?.node);
-  }, [data]);
   
   const resumeUrl = data?.resumeFile?.edges[0]?.node?.publicURL || "#";
   
