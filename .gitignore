@@ -61,7 +61,7 @@ public
 # Ignore pdf and scaffolding files.
 *-scaffold.*
 .scaffolding/
-#*.pdf
+*.pdf
 
 # Mac files
 .DS_Store
