@@ -22,7 +22,7 @@ import useWindowSize from "../utils/useWindowSize";
 const Header = () => {
   const data = useStaticQuery(graphql`
     {
-      file(name: { eq: "resume" }) {
+      file(relativePath: { eq: "resume.pdf" }) {
         publicURL
       }
     }
