@@ -11,7 +11,6 @@ import Header from "./Header"
 import "../styles/layout.css"
 import Footer from "./Footer"
 import ParticlesBackground from "./particles/ParticlesBackground"
-import "./fontawesome.js";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
